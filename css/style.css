@@ -54,12 +54,20 @@ form input:focus{
   border-radius: 5px;
 }
 
+#form-add button:active,
+#form-search button:active, 
+#todo-list button:active{
+  transform: scale(0.95);
+}
 hr{
   margin-bottom: 40px;
 }
 
 #todo-actions{
   margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 #todo-actions button{
@@ -69,6 +77,10 @@ hr{
   padding: 6px;
 }
 
+#todo-actions button:active{
+  transform: scale(0.95);
+}
+
 .todo{
   display: flex;
   align-items: center;
@@ -76,6 +88,16 @@ hr{
   font-size: 1em;
   font-weight: normal;
   margin-bottom: 1em;
+}
+
+.todo p{
+  flex: 1;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.todo.done p{
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .todo .actions{
