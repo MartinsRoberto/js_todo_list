@@ -1,8 +1,15 @@
 const todoList = document.querySelector('#todo-list')
 const todo = document.querySelectorAll('#todo-list .todo')
 
-const btnAdd = document.querySelector('#form-add button')
+const formAdd = document.querySelector('#form-add')
+const formSearch = document.querySelector('#form-search')
+const formEdit = document.querySelector('#form-edit')
 
+const todoActions = document.querySelector('#todo-actions')
+
+const confirmEditTodo = document.querySelector('#form-edit .confirm-edit-todo')
+
+const btnAdd = document.querySelector('#form-add button')
 const btnClearAll = document.querySelector('#todo-actions .clear-all')
 const btnClearDone = document.querySelector('#todo-actions .clear-done')
 
@@ -12,7 +19,9 @@ const removeTodo = document.querySelector('#todo-list .remove-todo')
 
 const inputAdd = document.querySelector('#form-add input')
 const inputSearch = document.querySelector('#form-search input')
+const inputEdit = document.querySelector('#form-edit input')
 
+let todoEdit = ''
 btnAdd.addEventListener('click', (e) => {
   e.preventDefault()
   if(inputAdd.value){
@@ -28,6 +37,29 @@ btnClearAll.addEventListener('click', () => todoClearAll())
 
 btnClearDone.addEventListener('click', () => todoClearDone())
 
+confirmEditTodo.addEventListener('click', (e) => {
+  e.preventDefault()
+  toggleFormsTodo()
+  todoEdit.querySelector('p').innerText = inputEdit.value
+})
+
+document.addEventListener('click', (e) => {
+  const targetEl = e.target
+
+  if (targetEl.parentNode.classList.contains("finish-todo")) {
+    targetEl.closest('.todo').classList.toggle('done')
+  }
+
+  if (targetEl.parentNode.classList.contains("remove-todo")) {
+    targetEl.closest('.todo').remove()
+  }
+
+  if (targetEl.parentNode.classList.contains("edit-todo")) {
+    toggleFormsTodo()
+    inputEdit.value = targetEl.closest('.todo').querySelector('p').innerText
+    todoEdit = targetEl.closest('.todo')
+  }
+})
 
 const todoAdd = (text) => {
   const todo = document.createElement("div");
@@ -90,16 +122,10 @@ const todoSearch = (value) => {
   })
 }
 
-
-document.addEventListener('click', (e) => {
-  const targetEl = e.target
-  const parentEl = targetEl.parentNode
-
-  if (parentEl.classList.contains("finish-todo")) {
-    parentEl.closest('.todo').classList.toggle('done')
-  }
-
-  if (parentEl.classList.contains("remove-todo")) {
-    parentEl.closest('.todo').remove()
-  }
-})
+const toggleFormsTodo = () =>{
+  todoList.classList.toggle('hide')
+  formAdd.classList.toggle('hide')
+  formSearch.classList.toggle('hide')
+  formEdit.classList.toggle('hide')
+  todoActions.classList.toggle('hide')
+}

@@ -18,19 +18,52 @@ body{
   background-color: #212529;
 }
 
-#header{
-  text-align: center;
+i{
+  width: 100%;
+  padding: 7px 0px;
+}
+.btn-primary{
+  font-size: 1em;
+  border: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-#header h1, #header h3{
+.btn-secondary{
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.btn-primary:hover, .btn-secondary:hover{
+  background-color: #0d6efd;
+}
+.btn-primary:active, .btn-secondary:active{
+  transform: scale(0.95);
+}
+
+
+
+#header{
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#header h1{
   margin-bottom: 0.5em;
 }
-form{
+
+#form-add, #form-search{
   margin: 1em 0px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
+
 input{
   padding: 6px;
   box-sizing: border-box;
@@ -44,21 +77,22 @@ form input:focus{
   outline: none;
 }
 
-#form-add button,
-#form-search button, 
-#todo-list button{
-  font-size: 1em;
-  border: none;
-  height: 30px;
-  width: 30px;
-  border-radius: 5px;
+#form-edit{
+  margin: 1em 0px 1em 0px;
+}
+#form-edit input{
+  display: block;
+  width: 100%;
+  margin: 1em 0px;
 }
 
-#form-add button:active,
-#form-search button:active, 
-#todo-list button:active{
-  transform: scale(0.95);
+#form-edit .actions{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: .5em;
 }
+
 hr{
   margin-bottom: 40px;
 }
@@ -67,18 +101,7 @@ hr{
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-}
-
-#todo-actions button{
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  padding: 6px;
-}
-
-#todo-actions button:active{
-  transform: scale(0.95);
+  gap: 10px;
 }
 
 .todo{
@@ -103,4 +126,12 @@ hr{
 .todo .actions{
   display: flex;
   gap: 5px;
+}
+
+#todo-list.hide,
+#form-add.hide,
+#form-search.hide,
+#form-edit.hide,
+#todo-actions.hide{
+  display: none;
 }

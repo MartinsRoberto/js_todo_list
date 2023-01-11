@@ -11,61 +11,75 @@
 </head>
 <body>
   <div class="container">
+
     <header id="header">
       <h1>ToDo List</h1>
       <h3>Adicione suas tarefas aqui</h3>
     </header>
+
     <form id="form-add">
       <input type="tarefas" placeholder="Nova tarefa">
-      <button><i class="fa-solid fa-plus"></i></button>
+      <button class="btn-primary"><i class="fa-solid fa-plus"></i></button>
     </form>
+
     <form id="form-search">
       <input type="tarefas" placeholder="Buscar...">
     </form>
+
+    <form id="form-edit" class="hide">
+      <input type="tarefas" placeholder="editando...">
+      <div class="actions">
+        <button class="btn-secondary confirm-edit-todo">Salvar</button>
+        <button class="btn-secondary cancel-edit-todo">Cancelar</button>
+      </div>
+    </form>
+
     <hr>
+
     <div id="todo-actions">
-      <button class="clear-all">Apagar lista</button>
-      <button class="clear-done">Apagar tarefas feitas</button>
+      <button class="btn-secondary clear-all">Apagar lista</button>
+      <button class="btn-secondary clear-done">Apagar tarefas feitas</button>
     </div>
+
     <div id="todo-list">
       <div class="todo">
-        <p>Abacaxi</p>
+        <p>Tarefa 1</p>
         <div class="actions">
-          <button class="finish-todo"><i class="fa-solid fa-check"></i></button>
-          <button class="edit-todo"><i class="fa-solid fa-pen"></i></button>
-          <button class="remove-todo"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn-primary finish-todo"><i class="fa-solid fa-check"></i></button>
+          <button class="btn-primary edit-todo"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn-primary remove-todo"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
       <div class="todo">
-        <p>Banana</p>
+        <p>Tarefa 2</p>
         <div class="actions">
-          <button class="finish-todo"><i class="fa-solid fa-check"></i></button>
-          <button class="edit-todo"><i class="fa-solid fa-pen"></i></button>
-          <button class="remove-todo"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn-primary finish-todo"><i class="fa-solid fa-check"></i></button>
+          <button class="btn-primary edit-todo"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn-primary remove-todo"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
       <div class="todo">
-        <p>Carambola</p>
+        <p>Tarefa 3</p>
         <div class="actions">
-          <button class="finish-todo"><i class="fa-solid fa-check"></i></button>
-          <button class="edit-todo"><i class="fa-solid fa-pen"></i></button>
-          <button class="remove-todo"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn-primary finish-todo"><i class="fa-solid fa-check"></i></button>
+          <button class="btn-primary edit-todo"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn-primary remove-todo"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
       <div class="todo">
-        <p>Laranja</p>
+        <p>Tarefa 4</p>
         <div class="actions">
-          <button class="finish-todo"><i class="fa-solid fa-check"></i></button>
-          <button class="edit-todo"><i class="fa-solid fa-pen"></i></button>
-          <button class="remove-todo"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn-primary finish-todo"><i class="fa-solid fa-check"></i></button>
+          <button class="btn-primary edit-todo"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn-primary remove-todo"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
       <div class="todo">
-        <p>Uva</p>
+        <p>Tarefa 5</p>
         <div class="actions">
-          <button class="finish-todo"><i class="fa-solid fa-check"></i></button>
-          <button class="edit-todo"><i class="fa-solid fa-pen"></i></button>
-          <button class="remove-todo"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn-primary finish-todo"><i class="fa-solid fa-check"></i></button>
+          <button class="btn-primary edit-todo"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn-primary remove-todo"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
     </div>
